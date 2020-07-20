@@ -4,8 +4,8 @@ const Index = () => {
 
     return (
         <>
-            <h1>CoastersApp_</h1>
-            <p>Perder la cabeza a saco</p>
+            <h1>Indie</h1>
+            <p>The best website for information on independent artists!</p>
         </>
     )
 }

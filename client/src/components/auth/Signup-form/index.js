@@ -43,24 +43,24 @@ class SignupForm extends Component {
 
                 <Row>
                     <Col md={{ offset: 3, span: 6 }}>
-                        <h3>Registro de usuario</h3>
+                        <h3>Artist Registration</h3>
 
                         <hr></hr>
 
                         <Form onSubmit={this.handleFormSubmit}>
 
                             <Form.Group>
-                                <Form.Label>Nombre de usuario</Form.Label>
+                                <Form.Label>Username</Form.Label>
                                 <Form.Control onChange={this.handleInputChange} value={this.state.username} name="username" type="text" />
                             </Form.Group>
 
                             <Form.Group>
-                                <Form.Label>Contraseña</Form.Label>
+                                <Form.Label>Password</Form.Label>
                                 <Form.Control onChange={this.handleInputChange} value={this.state.password} name="password" type="password" />
-                                <Form.Text className="text-muted">Mínimo tres caracteres, mangurrián.</Form.Text>
+                                <Form.Text className="text-muted">3 character minimum</Form.Text>
                             </Form.Group>
 
-                            <Button variant="dark" type="submit">Registrarme</Button>
+                            <Button variant="dark" type="submit">Register</Button>
                         </Form>
 
                     </Col>

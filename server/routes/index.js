@@ -1,6 +1,6 @@
 module.exports = app => {
 
     // Base URLS
-    app.use('/api/coasters', require('./coaster.routes'))
-    app.use('/api', require('./auth.routes'))
+    app.use('/artists', require('./user.routes'))
+    app.use('/authentication', require('./auth.routes'))
 }
