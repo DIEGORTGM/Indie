@@ -10,7 +10,7 @@ import Navigation from './ui/Navbar'
 import Message from './ui/CustomToast'
 
 import CoastersList from './coasters/Coaster-list/'
-import CoasterDetail from './coasters/Coaster-detail/'
+import ArtistDetails from './coasters/Coaster-detail/'
 import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
@@ -64,7 +64,7 @@ class App extends Component {
           />
 
           <Route exact path="/coasters" render={() => <CoastersList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/coasters/:coaster_id" render={props => <CoasterDetail {...props} />} />
+          <Route path="/getOneArtist/:id" render={props => <ArtistDetails {...props} />} />
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
         </Switch>
