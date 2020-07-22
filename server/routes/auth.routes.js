@@ -114,14 +114,12 @@ const User = require("../models/User.model");
 const bcrypt = require("bcrypt");
 
 router.post("/signup", (req, res, next) => {
-  const name = req.body.name;
   const username = req.body.username;
   const password = req.body.password;
   const occupation = req.body.occupation;
   const contact = req.body.contact;
-  const work = req.body.work;
 
-  if (!username || !password || !name || !occupation || !contact || !work) {
+  if (!username || !password || !occupation || !contact ) {
     res.status(400).json({ message: "Provide valid information" });
     return;
   }
@@ -151,12 +149,10 @@ router.post("/signup", (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     const aNewUser = new User({
-      name: name,
       username: username,
       password: hashPass,
       occupation: occupation,
       contactInfo: contact,
-      pastWork: work,
     });
 
     aNewUser.save((err) => {

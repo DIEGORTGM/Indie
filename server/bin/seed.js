@@ -13,7 +13,7 @@ mongoose.connect(process.env.DB, {
 const listUsers = [
   {
     name: "Eric Clapton",
-    username: "ericClapton",
+    username: "Eric Clapton",
     password: "ericClapton",
     occupation: "Singer/Songwriter",
     description:
@@ -25,7 +25,7 @@ const listUsers = [
   },
   {
     name: "Mac Miller",
-    username: "macMiller",
+    username: "Mac Miller",
     password: "macMiller",
     occupation: "Singer/Songwriter",
     description:
@@ -38,7 +38,7 @@ const listUsers = [
   },
   {
     name: "Lana Del Rey",
-    username: "lanaRey",
+    username: "Lana Del Rey",
     password: "lanaRey",
     occupation: "Singer/Songwriter",
     description:
@@ -56,7 +56,7 @@ const listUsers = [
   },
   {
     name: "Joey Bada$$",
-    username: "joeyBada$$",
+    username: "Joey Bada$$",
     password: "joeyBada$$",
     occupation: "Singer/Songwriter",
     description:
@@ -69,7 +69,7 @@ const listUsers = [
   },
   {
     name: "Action Bronson",
-    username: "actionBronson",
+    username: "Action Bronson",
     password: "actionBronson",
     occupation: "Singer/Songwriter",
     description:
@@ -82,7 +82,7 @@ const listUsers = [
   },
   {
     name: "Tyler, The Creator",
-    username: "tylerCreator",
+    username: "Tyler, The Creator",
     password: "tylerCreator",
     occupation: "Singer/Songwriter",
     description:
@@ -95,7 +95,7 @@ const listUsers = [
   },
   {
     name: "Chance The Rapper",
-    username: "chanceRapper",
+    username: "Chance The Rapper",
     password: "chanceRapper",
     occupation: "Singer/Songwriter",
     description:
@@ -107,21 +107,21 @@ const listUsers = [
     favorites: [""],
   },
   {
-    name: "Anderson .Paak",
-    username: "andersonPaak",
-    password: "andersonPaak",
+    name: "Macklemore",
+    username: "Macklemore",
+    password: "Macklemore",
     occupation: "Singer/Songwriter",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
     imageUrl:
-      "https://media.resources.festicket.com/www/artists/AndersonPaak.jpg",
-    contactInfo: ["andersonPaak@anderson.com", "+34616162345"],
-    pastWork: ["Ventura", "Oxnard", "Malibu", "..."],
+      "https://www.kentreporter.com/wp-content/uploads/2020/02/20409066_web1_macklemore-AUB-200207-T.jpeg",
+    contactInfo: ["Macklemore@macklemore.com", "+34616162345"],
+    pastWork: ["Gemini", "This Unruly Mess I've Made ", "The Heist", "..."],
     favorites: [""],
   },
   {
     name: "Ellie Goulding",
-    username: "ellieGoulding",
+    username: "Ellie Goulding",
     password: "ellieGoulding",
     occupation: "Singer/Songwriter",
     description:
@@ -134,8 +134,73 @@ const listUsers = [
   },
   {
     name: "The Weeknd",
-    username: "theWeeknd",
+    username: "The Weeknd",
     password: "theWeeknd",
+    occupation: "Singer/Songwriter",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+    imageUrl:
+      "https://i.guim.co.uk/img/media/73ec4373ed4f59ef1a1312176558752a5793529d/0_336_6552_3932/master/6552.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=b3a7881444203651628e94863df6c9de",
+    contactInfo: ["theWeeknd@weeknd.com", "+34623418956"],
+    pastWork: ["After Hours", "Starboy", "Beauty Behind the Madness", "..."],
+    favorites: [""],
+  },
+  {
+    name: "",
+    username: "",
+    password: "",
+    occupation: "Singer/Songwriter",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+    imageUrl:
+      "",
+    contactInfo: ["@.com", "+34623418956"],
+    pastWork: ["", "", "", "..."],
+    favorites: [""],
+  },
+  {
+    name: "",
+    username: "",
+    password: "",
+    occupation: "Singer/Songwriter",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+    imageUrl:
+      "",
+    contactInfo: ["@.com", "+34623418956"],
+    pastWork: ["", "", "", "..."],
+    favorites: [""],
+  },
+  {
+    name: "",
+    username: "",
+    password: "",
+    occupation: "Singer/Songwriter",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+    imageUrl:
+      "",
+    contactInfo: ["@.com", "+34623418956"],
+    pastWork: ["", "", "", "..."],
+    favorites: [""],
+  },
+  {
+    name: "",
+    username: "",
+    password: "",
+    occupation: "Singer/Songwriter",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+    imageUrl:
+      "",
+    contactInfo: ["@.com", "+34623418956"],
+    pastWork: ["", "", "", "..."],
+    favorites: [""],
+  },
+  {
+    name: "",
+    username: "",
+    password: "",
     occupation: "Singer/Songwriter",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
