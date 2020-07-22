@@ -42,7 +42,7 @@ class CoasterList extends Component {
     return (
       <>
         <Container as="main" className="coasters-page">
-          <h1>Our Independent Artists:</h1>
+          <h1>Our Independent Artists.</h1>
 
           {this.props.loggedInUser && (
             <Button
@@ -51,7 +51,7 @@ class CoasterList extends Component {
               size="sm"
               style={{ marginBottom: "20px" }}
             >
-              Crear nuevo item
+              Search
             </Button>
           )}
 

@@ -30,7 +30,7 @@ class CoasterDetails extends Component {
 
         return (
 
-            !this.state.coasterDetails ? <h3>CARGANDO</h3> :
+            !this.state.coasterDetails ? <h3>Loading...</h3> :
 
                 <Container as="main">
 
