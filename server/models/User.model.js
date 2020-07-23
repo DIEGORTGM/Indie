@@ -22,7 +22,7 @@ const UserSchema = new Schema(
     imageUrl: {
       type: String,
       default:
-        "https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png",
+        "https://iupac.org/wp-content/uploads/2018/05/default-avatar.png",
     },
     contactInfo: {
       type: [String],
