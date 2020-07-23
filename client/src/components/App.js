@@ -9,8 +9,8 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Navigation from './ui/Navbar'
 import Message from './ui/CustomToast'
 
-import CoastersList from './coasters/Coaster-list/'
-import ArtistDetails from './coasters/Coaster-detail/'
+import ArtistList from './artists/Artist-list/index'
+import ArtistDetails from './artists/Artist-detail/index'
 import SignupForm from './auth/Signup-form'
 import LoginForm from './auth/Login-form'
 import ProfilePage from './pages/profile'
@@ -63,7 +63,7 @@ class App extends Component {
             this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />}
           />
 
-          <Route exact path="/coasters" render={() => <CoastersList loggedInUser={this.state.loggedInUser} />} />
+          <Route exact path="/coasters" render={() => <ArtistList loggedInUser={this.state.loggedInUser} />} />
           <Route path="/getOneArtist/:id" render={props => <ArtistDetails {...props} />} />
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />

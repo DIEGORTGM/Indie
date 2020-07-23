@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const User = require("../models/User.model");
 
 
-mongoose.connect(process.env.DB, {
+mongoose.connect(process.env.DB_REMOTE, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
 
-// User.collection.drop();
+User.collection.drop();
 
 const listUsers = [
   {

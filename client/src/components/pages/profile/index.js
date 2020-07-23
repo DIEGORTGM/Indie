@@ -6,20 +6,12 @@
 //         props.loggedInUser && <h1>¡Hola, {props.loggedInUser.username}!</h1>
 //     )}
 
-
-
 // export default Profile
-
-
-
 
 // V.2 //
 
-
-
 // import React from 'react'
 // import './index.css'
- 
 
 // import Container from 'react-bootstrap/Container'
 // import Row from 'react-bootstrap/Row'
@@ -27,7 +19,6 @@
 // import Form from 'react-bootstrap/Form'
 
 // import { Link } from 'react-router-dom'
-
 
 // const Profile = props => {
 
@@ -67,31 +58,28 @@
 //             <Col md={{ span: 4, offset: 1 }}></Col>
 //           </Row>
 //         </Container>
-         
+
 //       </>
 //     );
 // }
 
-
-
-
 // export default Profile
-
-
-
-
 
 // V.3 //
 
 import React, { Component } from "react";
-import './index.css'
+import "./index.css";
 
-import ArtistService from "../../../service/CoasterService";
+import ArtistService from "../../../service/ArtistService";
+import ArtistForm from "../../pages/profile/User-form/index";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
 class Profile extends Component {
@@ -101,27 +89,35 @@ class Profile extends Component {
       profile: undefined,
     };
     this.artistService = new ArtistService();
+    console.log("constructor");
   }
 
-  componentDidMount = () => {
-      const id = this.props.loggedInUser.id;
-      
-
-    console.log(id);
-
+  getUserData = () => {
     this.artistService
-      .getOneArtist(id)
-      .then((response) => {
-        console.log(response.data);
-        return this.setState({ profile: response.data });
-      })
-        
-    
-
+      .getOneArtist(this.props.loggedInUser.id)
+      .then((response) => this.setState({ profile: response.data }))
       .catch((err) => console.log(err));
   };
 
+  updateUserData = () => {
+    this.artistService
+      .editArtist(this.props.loggedInUser.id)
+      .then((response) => this.setState({ profile: response.data }))
+      .catch((err) => console.log(err));
+  };
+
+  componentDidMount = () => this.getUserData();
+
+  handleModal = (status) => this.setState({ showModal: status });
+
+  handleArtistSubmit = () => {
+    this.handleModal(false);
+    this.updateUserData();
+    this.getUserData();
+  };
+
   render() {
+    console.log("render");
     return (
       <>
         <h1 className="hello">Hello, {this.props.loggedInUser.username}.</h1>
@@ -129,30 +125,43 @@ class Profile extends Component {
         <Container as="main">
           <Row>
             <Col md={{ span: 5, offset: 0 }}>
-              <p>Profile Picture:</p>
+              {this.props.loggedInUser.imageUrl}
             </Col>
             <Col md={{ span: 5, offset: 5 }}>
               <p>
-                <b>Occupation:</b>{" "}
+                <b>Occupation:  </b>
+                {this.props.loggedInUser.occupation}
               </p>
               <hr></hr>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>About Me:</Form.Label>
+              <p>
+                <b>About Me:  </b>
+                {this.props.loggedInUser.description}
+              </p>
+              {/* <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>About Me:  </Form.Label>
                 <Form.Control as="textarea" rows="3" />
-              </Form.Group>
-              <hr></hr>
+              </Form.Group> */}
 
               <hr></hr>
               <p>
-                <b>Contact Info:</b>
-                {/* {this.props.loggedInUser.contact} */}
+                <b>Contact Info:  </b>
+                {this.props.loggedInUser.contactInfo}
               </p>
               <hr></hr>
               <p>
-                <b>Favorites:</b>{" "}
+                <b>Favorites: </b>{" "}
               </p>
               <hr></hr>
-              <Link className="btn btn-dark btn-md" to="/coasters">
+              <Button
+                onClick={() => this.handleModal(true)}
+                variant="dark"
+                size="sm"
+                style={{ marginBottom: "20px" }}
+              >
+                Edit
+              </Button>
+              <hr></hr>
+              <Link className="btn btn-dark btn-md linkBack" to="/coasters">
                 Go Back
               </Link>
             </Col>
@@ -160,18 +169,18 @@ class Profile extends Component {
           </Row>
         </Container>
 
-        {/* <Modal
+        <Modal
           size="lg"
           show={this.state.showModal}
           onHide={() => this.handleModal(false)}
         >
           <Modal.Body>
-            <CoasterForm handleCoasterSubmit={this.handleCoasterSubmit} />
+            <ArtistForm handleArtistSubmit={this.handleArtistSubmit} />
           </Modal.Body>
-        </Modal> */}
+        </Modal>
       </>
     );
   }
-};
+}
 
 export default Profile;

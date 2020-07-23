@@ -182,18 +182,20 @@
 
 
 import React, { Component } from "react";
-import ArtistService from "../../../service/CoasterService";
+import ArtistService from "../../../service/ArtistService";
 
-import CoasterCard from "./Coaster-card";
-import CoasterForm from "./../Coaster-form";
+import ArtistCard from "./Artist-card";
+import ArtistForm from "../../pages/profile/User-form";
 import Spinner from "../../ui/Spinner";
 
-import "./Coaster-list.css";
+import "./Artist-list.css";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form"
+import FormControl from "react-bootstrap/FormControl"
 
 class ArtistList extends Component {
   constructor(props) {
@@ -216,7 +218,7 @@ class ArtistList extends Component {
 
   handleModal = (status) => this.setState({ showModal: status });
 
-  handleCoasterSubmit = () => {
+  handleArtistSubmit = () => {
     this.handleModal(false);
     this.updateArtistList();
   };
@@ -224,26 +226,30 @@ class ArtistList extends Component {
   render() {
     return (
       <>
-        <Container as="main" className="coasters-page">
+        <Container as="main" className="artist-page">
           <h1>Our Independent Artists.</h1>
 
-          {this.props.loggedInUser && (
-            <Button
+            <Form>
+              <FormControl type="text" placeholder="Search Independent Artists..." className="mr-md-2 search" />
+              <Button variant="outline-dark" className="search">Search</Button>
+            </Form>
+           
+            {/* <Button
               onClick={() => this.handleModal(true)}
               variant="dark"
               size="sm"
               style={{ marginBottom: "20px" }}
             >
               Search
-            </Button>
-          )}
+            </Button> */}
+          
 
           {!this.state.artists ? (
             <Spinner />
           ) : (
             <Row>
               {this.state.artists.map((elm) => (
-                <CoasterCard key={elm._id} {...elm} />
+                <ArtistCard key={elm._id} {...elm} />
               ))}
             </Row>
           )}
@@ -255,7 +261,7 @@ class ArtistList extends Component {
           onHide={() => this.handleModal(false)}
         >
           <Modal.Body>
-            <CoasterForm handleCoasterSubmit={this.handleCoasterSubmit} />
+            <ArtistForm handleArtistSubmit={this.handleArtistSubmit} />
           </Modal.Body>
         </Modal>
       </>

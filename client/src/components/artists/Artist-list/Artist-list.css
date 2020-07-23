@@ -1,0 +1,13 @@
+.artist-card {
+    margin-bottom: 40px;
+}
+
+.artist-card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.search {
+    margin-bottom: 10px;
+}
+
