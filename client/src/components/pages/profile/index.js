@@ -80,7 +80,6 @@ import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
 
 class Profile extends Component {
   constructor() {
@@ -89,10 +88,10 @@ class Profile extends Component {
       profile: undefined,
     };
     this.artistService = new ArtistService();
-    console.log("constructor");
   }
 
   getUserData = () => {
+    console.log(this.props.loggedInUser.id)
     this.artistService
       .getOneArtist(this.props.loggedInUser.id)
       .then((response) => this.setState({ profile: response.data }))
@@ -117,7 +116,6 @@ class Profile extends Component {
   };
 
   render() {
-    console.log("render");
     return (
       <>
         <h1 className="hello">Hello, {this.props.loggedInUser.username}.</h1>
@@ -137,11 +135,6 @@ class Profile extends Component {
                 <b>About Me:  </b>
                 {this.props.loggedInUser.description}
               </p>
-              {/* <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>About Me:  </Form.Label>
-                <Form.Control as="textarea" rows="3" />
-              </Form.Group> */}
-
               <hr></hr>
               <p>
                 <b>Contact Info:  </b>
