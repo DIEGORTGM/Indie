@@ -8,13 +8,16 @@ const UserSchema = new Schema(
     },
     username: {
       type: String,
+      required: true
     },
     password: {
       type: String,
+      required: true
     },
     occupation: {
       type: String,
       enum: ["Singer/Songwriter", "Producer", "DJ", "Instrumentalist"],
+      
     },
     description: {
       type: String,

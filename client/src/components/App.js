@@ -63,7 +63,7 @@ class App extends Component {
             this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />}
           />
 
-          <Route exact path="/coasters" render={() => <ArtistList loggedInUser={this.state.loggedInUser} />} />
+          <Route exact path="/artists" render={() => <ArtistList loggedInUser={this.state.loggedInUser} />} />
           <Route path="/getOneArtist/:id" render={props => <ArtistDetails {...props} />} />
           <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
           <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />

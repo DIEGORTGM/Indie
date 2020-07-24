@@ -19,7 +19,8 @@ router.get('/getOneArtist/:id', (req, res, next) => {
         .catch(err => next(err))
 })
 
-router.post('/edit/:id', (req, res, next) => {
+router.put('/edit/:id', (req, res, next) => {
+    // console.log(id, req.body)
     const { name, username, password, occupation, description, imageUrl, contactInfo, pastWork, favorites} = req.body
     Artist.findByIdAndUpdate(req.params.id, { name, username, password, occupation, description, imageUrl, contactInfo, pastWork, favorites})
         .then(editArtist => res.json(editArtist))

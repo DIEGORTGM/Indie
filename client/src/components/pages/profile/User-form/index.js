@@ -5,14 +5,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 class UserForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      username: "",
-      password: "",
-      occupation: "",
-      description: "",
-      contactInfo: "",
+      username: this.props.profileData.username,
+      password: '',
+      occupation: this.props.profileData.occupation,
+      description: this.props.profileData.description,
+      contactInfo: this.props.profileData.contactInfo,
     };
     this.artistService = new ArtistService();
   }
@@ -24,13 +24,16 @@ class UserForm extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+    const id = this.props.profileData._id;
+    console.log(id, this.state);
     this.artistService
-      .editArtist(this.state)
+      .editArtist(id, this.state)
       .then(() => this.props.handleArtistSubmit())
       .catch((err) => console.log(err));
   };
 
   render() {
+    console.log(this.state);
     return (
       <>
         <h3>Edit Profile</h3>
@@ -43,10 +46,12 @@ class UserForm extends Component {
               value={this.state.username}
               name="username"
               type="text"
+              placeholder={this.state.username}
+              className="text-muted"
             />
           </Form.Group>
 
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label>Password</Form.Label>
             <Form.Control
               onChange={this.handleInputChange}
@@ -55,8 +60,23 @@ class UserForm extends Component {
               type="text"
             />
             <Form.Text className="text-muted">New password here.</Form.Text>
-          </Form.Group>
+          </Form.Group> */}
 
+          {this.state.password = '' ? (
+            !this.handleFormSubmit()
+          ) : (
+            <Form.Group>
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                onChange={this.handleInputChange}
+                value={this.state.password}
+                name="password"
+                type="text"
+              />
+              <Form.Text className="text-muted">New password here.</Form.Text>
+            </Form.Group>
+            )} 
+          
           <Form.Group>
             <Form.Label>Occuaption</Form.Label>
             <Form.Control
@@ -65,14 +85,17 @@ class UserForm extends Component {
               value={this.state.occupation}
               name="occuaption"
               type="text"
+              placeholder={this.state.occupation}
             >
               <option>Options:</option>
               <option>Singer/Songwriter</option>
               <option>Producer</option>
               <option>DJ</option>
-              <option>Instrumentalist (guitar, bass, drums, etc.)</option>
+              <option>Instrumentalist</option>
             </Form.Control>
           </Form.Group>
+          
+
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>About Me</Form.Label>
@@ -81,8 +104,10 @@ class UserForm extends Component {
               value={this.state.description}
               name="description"
               type="text"
+              placeholder={this.state.description}
               as="textarea"
               rows="3"
+              className="text-muted"
             />
           </Form.Group>
 
@@ -93,6 +118,8 @@ class UserForm extends Component {
               value={this.state.contactInfo}
               name="contactInfo"
               type="text"
+              placeholder={this.state.contactInfo}
+              className="text-muted"
             />
           </Form.Group>
 
