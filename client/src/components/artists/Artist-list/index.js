@@ -51,17 +51,17 @@ class ArtistList extends Component {
               <Button variant="outline-dark" className="search">Search</Button>
             </Form>
            
-            {/* <Button
+             <Button
               onClick={() => this.handleModal(true)}
               variant="dark"
               size="sm"
               style={{ marginBottom: "20px" }}
             >
               Search
-            </Button> */}
+            </Button> 
           
 
-          {!this.state.artists ? (
+          {/* {!this.state.artists ? (
             <Spinner />
           ) : (
             <Row>
@@ -69,7 +69,7 @@ class ArtistList extends Component {
                 <ArtistCard key={elm._id} {...elm} />
               ))}
             </Row>
-          )}
+          )} */}
         </Container>
 
         <Modal
