@@ -51,7 +51,7 @@ class UserForm extends Component {
             />
           </Form.Group>
 
-          {/* <Form.Group>
+          <Form.Group>
             <Form.Label>Password</Form.Label>
             <Form.Control
               onChange={this.handleInputChange}
@@ -60,9 +60,9 @@ class UserForm extends Component {
               type="text"
             />
             <Form.Text className="text-muted">New password here.</Form.Text>
-          </Form.Group> */}
+          </Form.Group> 
 
-          {this.state.password = '' ? (
+          {/* {this.state.password = '' ? (
             !this.handleFormSubmit()
           ) : (
             <Form.Group>
@@ -75,7 +75,7 @@ class UserForm extends Component {
               />
               <Form.Text className="text-muted">New password here.</Form.Text>
             </Form.Group>
-            )} 
+            )}  */}
           
           <Form.Group>
             <Form.Label>Occuaption</Form.Label>

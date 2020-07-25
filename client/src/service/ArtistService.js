@@ -21,7 +21,7 @@ import axios from "axios";
 export default class ArtistService {
   constructor() {
     this.service = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/artists`,
+      baseURL: 'http://localhost:5000/api/artists',
       withCredentials: true,
     });
   }
