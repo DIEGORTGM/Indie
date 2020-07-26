@@ -14,6 +14,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form"
 import FormControl from "react-bootstrap/FormControl"
 
+
 class ArtistList extends Component {
   constructor(props) {
     super(props);
@@ -46,22 +47,24 @@ class ArtistList extends Component {
         <Container as="main" className="artist-page">
           <h1>Our Independent Artists.</h1>
 
-            <Form>
-              <FormControl type="text" placeholder="Search Independent Artists..." className="mr-md-2 search" />
-              <Button variant="outline-dark" className="search">Search</Button>
-            </Form>
-           
-             <Button
+          <Form inline>
+            <FormControl
+              type="text"
+              placeholder="Search Artists..."
+              className="mr-sm-2 search"
+            />
+            <Button variant="outline-dark" className="search">Search</Button>
+          </Form>
+          {/* <Button
               onClick={() => this.handleModal(true)}
               variant="dark"
               size="sm"
               style={{ marginBottom: "20px" }}
             >
               Search
-            </Button> 
-          
+            </Button>  */}
 
-          {/* {!this.state.artists ? (
+          {!this.state.artists ? (
             <Spinner />
           ) : (
             <Row>
@@ -69,7 +72,7 @@ class ArtistList extends Component {
                 <ArtistCard key={elm._id} {...elm} />
               ))}
             </Row>
-          )} */}
+          )}
         </Container>
 
         <Modal
