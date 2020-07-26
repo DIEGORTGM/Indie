@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import Form from "react-bootstrap/Form"
 
 class ArtistDetails extends Component {
   constructor() {
@@ -39,32 +40,35 @@ class ArtistDetails extends Component {
       <Container as="main">
         <h1>{this.state.artistDetails.title}</h1>
 
-          <Row>
-            <Col md={{ span: 4, offset: 1 }}>
-              <p>
-                <b></b> {this.state.artistDetails.username}
-              </p>
-              <hr></hr>
-              <img
-                src={this.state.artistDetails.imageUrl}
-                className="rounded"
-                alt="profile"
-                
-              />
-            </Col>
-          <Col md={{ span: 5, offset: 1 }}>
+        <Row>
+          <Col md={{ span: 4, offset: 1 }}>
             <p>
-                <b>Occupation:</b>
-                <br></br>
-                {this.state.artistDetails.occupation}
-              </p>
-              <hr></hr>
-            <p>
-                <b>About:</b>
-                <br></br>
-                {this.state.artistDetails.description}
+              <b></b> {this.state.artistDetails.username}
             </p>
             <hr></hr>
+            <img
+              src={this.state.artistDetails.imageUrl}
+              className="rounded"
+              alt="profile"
+            />
+          </Col>
+          <Col md={{ span: 5, offset: 1 }}>
+            <p>
+              <b>Occupation:</b>
+              <br></br>
+              {this.state.artistDetails.occupation}
+            </p>
+            <hr></hr>
+            <p>
+              <b>About:</b>
+              <br></br>
+              {this.state.artistDetails.description}
+            </p>
+            <hr></hr>
+            <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Comments:</Form.Label>
+              <Form.Control as="textarea" rows="3" />
+            </Form.Group>
             <Link className="btn btn-dark btn-md" to="/artists">
               Go Back
             </Link>
