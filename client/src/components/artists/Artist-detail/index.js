@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import ArtistService from "../../../service/ArtistService";
 
+import './index.css'
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -50,7 +52,10 @@ class ArtistDetails extends Component {
               src={this.state.artistDetails.imageUrl}
               className="rounded"
               alt="profile"
-            />
+              />
+              <Link className="btn btn-dark btn-md detailButton" to="/artists">
+                Go Back
+            </Link>
           </Col>
           <Col md={{ span: 5, offset: 1 }}>
             <p>
@@ -69,9 +74,6 @@ class ArtistDetails extends Component {
               <Form.Label>Comments:</Form.Label>
               <Form.Control as="textarea" rows="3" />
             </Form.Group>
-            <Link className="btn btn-dark btn-md" to="/artists">
-              Go Back
-            </Link>
           </Col>
         </Row>
       </Container>

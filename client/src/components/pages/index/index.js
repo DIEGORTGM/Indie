@@ -17,9 +17,9 @@ const Index = () => {
             <br></br>
             <br>
             </br>
-        <Col>
-          <div className="d-flex justify-content-center">
-            <h4>Our Artist of the Week.</h4>
+        <Col className="artistWeek">
+          <div >
+            <h4 className="aristText">Our Artist of the Week.</h4>
             <Card border="dark" className="artist-card-index">
               <Card.Img
                 variant="top"

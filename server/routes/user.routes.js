@@ -24,6 +24,7 @@ router.put("/edit/:id", (req, res, next) => {
     description,
     contactInfo,
   } = req.body;
+  
   Artist.findByIdAndUpdate(req.params.id, {
     username,
     occupation,

@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Image from "react-bootstrap/Image";
 
 class Profile extends Component {
   constructor() {
@@ -45,24 +46,25 @@ class Profile extends Component {
 
         <Container as="main">
           <Row>
-            <Col>
-              <img
+            <Col >
+              <Image 
                 src={this.props.loggedInUser.imageUrl}
                 alt="profile"
                 className="imageProfile"
-              ></img>
-              <p>{this.props.loggedInUser.occupation}</p>
-              <p>{this.props.loggedInUser.contactInfo}</p>
+                roundedCircle
+              ></Image>
+              <p className="text-center">{this.props.loggedInUser.occupation}</p>
+              <p className="text-center">{this.props.loggedInUser.contactInfo}</p>
             </Col>
             <Col>
               <p>
-                <b>About Me: </b>
+                <h5>About Me: </h5>
                 <br></br>
                 {this.props.loggedInUser.description}
               </p>
               <hr></hr>
               <p>
-                <b>Favorites: </b>{" "}
+                <h5>Favorites: </h5>{" "}
               </p>
               <hr></hr>
               <Button
