@@ -1,30 +1,61 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
-const Artist = require('../models/User.model')
+const Artist = require("../models/User.model");
 
 // Endpoints
-router.get('/getAllArtists', (req, res, next) => {
+router.get("/getAllArtists", (req, res, next) => {
+  Artist.find()
+    .then((allArtists) => res.json(allArtists))
+    .catch((err) => next(err));
+});
 
-    Artist.find()
-        .then(allArtists => res.json(allArtists))
-        .catch(err => next(err))
-})
+router.get("/getOneArtist/:id", (req, res, next) => {
+  Artist.findById(req.params.id)
+    .then((oneArtist) => res.json(oneArtist))
+    .catch((err) => next(err));
+});
 
+router.put("/edit/:id", (req, res, next) => {
+  // console.log(id, req.body)
+  const {
+    name,
+    username,
+    password,
+    occupation,
+    description,
+    imageUrl,
+    contactInfo,
+    pastWork,
+    favorites,
+  } = req.body;
+  Artist.findByIdAndUpdate(req.params.id, {
+    name,
+    username,
+    password,
+    occupation,
+    description,
+    imageUrl,
+    contactInfo,
+    pastWork,
+    favorites,
+  })
+    .then((editArtist) => res.json(editArtist))
+    .catch((err) => next(new Error(err)));
+});
 
-router.get('/getOneArtist/:id', (req, res, next) => {
+router.post("/search", (req, res, next) => {
+  const { searchTerm } = req.body;
+  const regex = new RegExp(escapeRegex(searchTerm), "gi");
+  Artist.find({
+    username: regex,
+  })
+    .then((allArtists) => res.json(allArtists))
+    .catch((err) => next(err));
+});
 
-    Artist.findById(req.params.id)
-        .then(oneArtist => res.json(oneArtist))
-        .catch(err => next(err))
-})
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
-router.put('/edit/:id', (req, res, next) => {
-    // console.log(id, req.body)
-    const { name, username, password, occupation, description, imageUrl, contactInfo, pastWork, favorites} = req.body
-    Artist.findByIdAndUpdate(req.params.id, { name, username, password, occupation, description, imageUrl, contactInfo, pastWork, favorites})
-        .then(editArtist => res.json(editArtist))
-        .catch(err => next(new Error(err)))
-})
-
-module.exports = router
+module.exports = router;

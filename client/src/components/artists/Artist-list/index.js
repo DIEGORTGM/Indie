@@ -14,7 +14,6 @@
 // import Form from "react-bootstrap/Form"
 // import FormControl from "react-bootstrap/FormControl"
 
-
 // class ArtistList extends Component {
 //   constructor(props) {
 //     super(props);
@@ -91,7 +90,6 @@
 
 // export default ArtistList;
 
-
 //SEARCH 1 //
 
 import React, { Component } from "react";
@@ -116,7 +114,7 @@ class ArtistList extends Component {
     this.state = {
       artists: [],
       showModal: false,
-      searchTerm: ''
+      searchTerm: "",
     };
     this.artistService = new ArtistService();
   }
@@ -139,35 +137,44 @@ class ArtistList extends Component {
 
   // Search
 
-  // editSearchTerm = (e) => {
-  //   this.setState({searchTerm: e.target.value})
-  // }
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    this.artistService
+      .searchArtist(this.state)
+      .then((response) => {
+        console.log(response.data);
+        return this.setState({ artists: response.data });
+      })
+      .catch((err) => console.log(err.response.data.message)); // Error handling yay!
+  };
 
   // dynamicSearch = () => {
   //   return this.state.artists.filter(artists => artists.includes(this.state.searchTerm.toLowerCase()))
   // }
 
-
   render() {
+    console.log(this.state);
     return (
       <>
         <Container as="main" className="artist-page">
           <h1>Our Independent Artists.</h1>
 
-          <Form inline>
+          <Form inline onSubmit={this.handleFormSubmit}>
             <FormControl
+              name="searchTerm"
               type="text"
-              // value={this.state.searchTerm}
-              // onChange={this.editSearchTerm}
+              value={this.state.searchTerm}
+              onChange={this.handleInputChange}
               placeholder="Search Artists..."
               className="mr-sm-2 search"
             />
-            <Button
-              variant="outline-dark"
-              className="search"
-              // onChange={this.editSearchTerm}
-              // value={this.state.searchTerm}
-            >
+            <Button variant="dark" type="submit">
               Search
             </Button>
           </Form>

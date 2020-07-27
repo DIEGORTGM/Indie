@@ -9,7 +9,6 @@ class UserForm extends Component {
     super(props);
     this.state = {
       username: this.props.profileData.username,
-      password: '',
       occupation: this.props.profileData.occupation,
       description: this.props.profileData.description,
       contactInfo: this.props.profileData.contactInfo,
@@ -33,7 +32,6 @@ class UserForm extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <>
         <h3>Edit Profile</h3>
@@ -52,32 +50,6 @@ class UserForm extends Component {
           </Form.Group>
 
           <Form.Group>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              onChange={this.handleInputChange}
-              value={this.state.password}
-              name="password"
-              type="text"
-            />
-            <Form.Text className="text-muted">New password here.</Form.Text>
-          </Form.Group> 
-
-          {/* {this.state.password = '' ? (
-            !this.handleFormSubmit()
-          ) : (
-            <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                onChange={this.handleInputChange}
-                value={this.state.password}
-                name="password"
-                type="text"
-              />
-              <Form.Text className="text-muted">New password here.</Form.Text>
-            </Form.Group>
-            )}  */}
-          
-          <Form.Group>
             <Form.Label>Occuaption</Form.Label>
             <Form.Control
               as="select"
@@ -94,8 +66,18 @@ class UserForm extends Component {
               <option>Instrumentalist</option>
             </Form.Control>
           </Form.Group>
-          
 
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              onChange={this.handleInputChange}
+              value={this.state.contactInfo}
+              name="contactInfo"
+              type="text"
+              placeholder={this.state.contactInfo}
+              className="text-muted"
+            />
+          </Form.Group>
 
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>About Me</Form.Label>
@@ -107,18 +89,6 @@ class UserForm extends Component {
               placeholder={this.state.description}
               as="textarea"
               rows="3"
-              className="text-muted"
-            />
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              onChange={this.handleInputChange}
-              value={this.state.contactInfo}
-              name="contactInfo"
-              type="text"
-              placeholder={this.state.contactInfo}
               className="text-muted"
             />
           </Form.Group>
