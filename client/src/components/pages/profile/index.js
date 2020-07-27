@@ -45,7 +45,7 @@ class Profile extends Component {
 
         <Container as="main">
           <Row>
-            <Col md={{ span: 5, offset: 0 }}>
+            <Col>
               <img
                 src={this.props.loggedInUser.imageUrl}
                 alt="profile"
@@ -54,10 +54,10 @@ class Profile extends Component {
               <p>{this.props.loggedInUser.occupation}</p>
               <p>{this.props.loggedInUser.contactInfo}</p>
             </Col>
-            <Col md={{ span: 5, offset: 6 }}>
-              <hr></hr>
+            <Col>
               <p>
                 <b>About Me: </b>
+                <br></br>
                 {this.props.loggedInUser.description}
               </p>
               <hr></hr>
@@ -73,8 +73,8 @@ class Profile extends Component {
               >
                 Edit
               </Button>
-              <hr></hr>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+             
+              <Form.Group controlId="exampleForm.ControlTextarea1" className="comments">
                 <Form.Label>Comments:</Form.Label>
                 <Form.Control as="textarea" rows="3" />
               </Form.Group>
@@ -82,7 +82,7 @@ class Profile extends Component {
                 Go Back
               </Link>
             </Col>
-            <Col md={{ span: 4, offset: 1 }}></Col>
+            {/* <Col md={{ span: 4, offset: 1 }}></Col> */}
           </Row>
         </Container>
 
