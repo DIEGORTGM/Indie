@@ -1,5 +1,14 @@
 .header {
     margin-left: 200px;
-    margin-top: 200px;
+    margin-top: 180px;
 }
 
+.artist-card-index {
+    margin-bottom: 40px;
+    width: 350px
+}
+
+.artist-card img {
+    height: 180px;
+    object-fit: cover;
+}
