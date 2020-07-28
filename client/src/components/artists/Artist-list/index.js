@@ -98,7 +98,6 @@ class ArtistList extends Component {
                 <ArtistCard
                   key={elm._id}
                   {...elm}
-                  // artists={this.dynamicSearch()}
                 />
               ))}
             </Row>

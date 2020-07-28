@@ -4,6 +4,8 @@ import ArtistService from "../../../service/ArtistService";
 
 import "./index.css";
 
+import CommentCard from '../../comments/comment.card'
+
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -97,6 +99,9 @@ class ArtistDetails extends Component {
               {this.state.artistDetails.description}
             </p>
             <hr></hr>
+            {/* {this.state.map(() => (
+              <CommentCard />
+            ))} */}
             <Form onSubmit={this.handleFormSubmit}>
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Comments:</Form.Label>
