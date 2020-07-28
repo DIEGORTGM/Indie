@@ -17,7 +17,7 @@ const listUsers = [
     password: "ericClapton",
     occupation: "Singer/Songwriter",
     description:
-      "Eric Patrick Clapton, CBE (born 30 March 1945) is an English rock and blues guitarist, singer, and songwriter. He is the only three-time inductee to the Rock and Roll Hall of Fame: once as a solo artist and separately as a member of the Yardbirds and of Cream. Clapton has been referred to as one of the most important and influential guitarists of all time. Clapton ranked second in Rolling Stone's list of the '100 Greatest Guitarists of All Time' and fourth in Gibson's 'Top 50 Guitarists of All Time'.[4] He was also named number five in Time magazine's list of 'The 10 Best Electric Guitar Players' in 2009.",
+      "Eric Patrick Clapton, (born 30 March 1945) is an English rock and blues guitarist, singer, and songwriter. He is the only three-time inductee to the Rock and Roll Hall of Fame: once as a solo artist and separately as a member of the Yardbirds and of Cream. Clapton has been referred to as one of the most important and influential guitarists of all time. Clapton ranked second in Rolling Stone's list of the '100 Greatest Guitarists of All Time' and fourth in Gibson's 'Top 50 Guitarists of All Time'. He was also named number five in Time magazine's list of 'The 10 Best Electric Guitar Players' in 2009.",
     imageUrl: "https://e.radio-oxigeno.io/normal/2018/04/16/495349_595104.jpg",
     contactInfo: ["ericClapton@eric.com", "+34616188686"],
     pastWork: ["Unplugged", "Slowhand", "Riding With The King", "..."],

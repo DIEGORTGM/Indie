@@ -51,29 +51,66 @@ class App extends Component {
     this.fetchUser()
 
     return (
-
       <>
-
-        <Navigation setTheUser={this.setTheUser} loggedInUser={this.state.loggedInUser} handleToast={this.handleToast} />
+        <Navigation
+          setTheUser={this.setTheUser}
+          loggedInUser={this.state.loggedInUser}
+          handleToast={this.handleToast}
+        />
 
         <Switch>
           <Route exact path="/" render={() => <IndexPage />} />
 
-          <Route path="/profile" render={() =>
-            this.state.loggedInUser ? <ProfilePage loggedInUser={this.state.loggedInUser} /> : <Redirect to='/signup' />}
+          <Route
+            path="/profile"
+            render={() =>
+              this.state.loggedInUser ? (
+                <ProfilePage loggedInUser={this.state.loggedInUser} />
+              ) : (
+                <Redirect to="/signup" />
+              )
+            }
           />
 
-          <Route exact path="/artists" render={() => <ArtistList loggedInUser={this.state.loggedInUser} />} />
-          <Route path="/getOneArtist/:id" render={props => <ArtistDetails {...props} />} />
-          <Route path="/signup" render={props => <SignupForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
-          <Route path="/login" render={props => <LoginForm {...props} setTheUser={this.setTheUser} handleToast={this.handleToast} />} />
+          <Route
+            exact
+            path="/artists"
+            render={() => <ArtistList loggedInUser={this.state.loggedInUser} />}
+          />
+          <Route
+            path="/getOneArtist/:id"
+            render={(props) => (
+              <ArtistDetails
+                {...props}
+                loggedInUser={this.state.loggedInUser}
+              />
+            )}
+          />
+          <Route
+            path="/signup"
+            render={(props) => (
+              <SignupForm
+                {...props}
+                setTheUser={this.setTheUser}
+                handleToast={this.handleToast}
+              />
+            )}
+          />
+          <Route
+            path="/login"
+            render={(props) => (
+              <LoginForm
+                {...props}
+                setTheUser={this.setTheUser}
+                handleToast={this.handleToast}
+              />
+            )}
+          />
         </Switch>
 
         <Message {...this.state.toast} handleToast={this.handleToast} />
-
       </>
-
-    )
+    );
   }
 }
 

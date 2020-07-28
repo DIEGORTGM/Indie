@@ -8,20 +8,20 @@ const UserSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: true,
     },
     password: {
       type: String,
-      required: true
+      required: true,
     },
     occupation: {
       type: String,
       enum: ["Singer/Songwriter", "Producer", "DJ", "Instrumentalist"],
-      
     },
     description: {
       type: String,
-      default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...'
+      default:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
     },
     imageUrl: {
       type: String,
@@ -37,6 +37,7 @@ const UserSchema = new Schema(
     favorites: {
       type: [String],
     },
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   },
   {
     timestamps: true,
