@@ -5,7 +5,7 @@ module.exports = (app) => {
   app.use("/api/comments", require("./comment.routes"));
 
   // CLOUDINARYCONFIG
-  // app.use('/api/files', require('./files.routes'))
+  app.use('/api/files', require('./files.routes'))
 
   app.use((req, res) => {
     res.sendFile(__dirname + "/public/index.html");

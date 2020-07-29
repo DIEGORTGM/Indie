@@ -37,12 +37,17 @@ const UserSchema = new Schema(
     favorites: {
       type: [String],
     },
-    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
   },
   {
     timestamps: true,
   }
 );
 
-const User = mongoose.model("user", UserSchema);
+const User = mongoose.model("User", UserSchema);
 module.exports = User;

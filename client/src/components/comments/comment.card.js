@@ -5,12 +5,14 @@ import "./index.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 
-const CommentCard = ({ text }) => {
+const CommentCard = (props) => {
   return (
     <Col md={4}>
       <Card border="dark" className="artist-card">
         <Card.Body>
-          <Card.Text>{text}</Card.Text>
+          <Card.Title>{props.owner.username}</Card.Title>
+          <hr></hr>
+          <Card.Text>{props.text}</Card.Text>
         </Card.Body>
       </Card>
     </Col>

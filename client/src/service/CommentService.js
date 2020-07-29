@@ -12,5 +12,5 @@ export default class CommentService {
     console.log(data);
     return this.service.post("/createComment", data);
   };
-  getAllComments = () => this.service.get("/getAllComments");
+  getAllComments = (id) => this.service.get(`/getAllComments/${id}`);
 }

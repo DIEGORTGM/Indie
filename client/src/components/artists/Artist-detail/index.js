@@ -4,7 +4,7 @@ import ArtistService from "../../../service/ArtistService";
 
 import "./index.css";
 
-import CommentCard from '../../comments/comment.card'
+import CommentCard from "../../comments/comment.card";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -21,20 +21,27 @@ class ArtistDetails extends Component {
     this.state = {
       loggedInUser: this.props.loggedInUser,
       artistDetails: undefined,
+      comments: [],
     };
     this.artistService = new ArtistService();
     this.commentService = new CommentService();
   }
 
-  componentDidMount = () => {
+  componentDidMount = () => this.fetchArtistData();
+
+  fetchArtistData = () => {
     const id = this.props.match.params.id;
 
     this.artistService
       .getOneArtist(id)
-      .then((response) => {
-        console.log(response.data);
-        return this.setState({ artistDetails: response.data });
-      })
+      .then((response) =>
+        this.setState({ artistDetails: response.data }, () => {
+          this.commentService
+            .getAllComments(this.state.artistDetails._id)
+            .then((response) => this.setState({ comments: response.data }))
+            .catch((err) => console.log(err));
+        })
+      )
 
       .catch((err) => console.log(err));
   };
@@ -53,18 +60,13 @@ class ArtistDetails extends Component {
       .then((response) => {
         this.artistService
           .addComment(artistId, response.data)
-          .then((response) => console.log(response.data));
+          .then(() => this.fetchArtistData())
+          .catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
-
-    //this.artistService
-    // .editArtist(id, this.state)
-    //.then(() => this.props.handleArtistSubmit())
-    //.catch((err) => console.log(err));
   };
 
   render() {
-    console.log(this.state);
     return !this.state.artistDetails ? (
       <h3>Loading...</h3>
     ) : (
@@ -76,7 +78,7 @@ class ArtistDetails extends Component {
             <p>
               <b></b> {this.state.artistDetails.username}
             </p>
-            <hr></hr>
+            <br></br>
             <img
               src={this.state.artistDetails.imageUrl}
               className="rounded"
@@ -99,9 +101,10 @@ class ArtistDetails extends Component {
               {this.state.artistDetails.description}
             </p>
             <hr></hr>
-            {/* {this.state.map(() => (
-              <CommentCard />
-            ))} */}
+            {this.state.comments &&
+              this.state.comments.map((comment, idx) => (
+                <CommentCard key={idx} {...comment} />
+              ))}
             <Form onSubmit={this.handleFormSubmit}>
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Comments:</Form.Label>

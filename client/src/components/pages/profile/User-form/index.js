@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import ArtistService from "../../../../service/ArtistService";
+import FilesService from "../../../../service/FilesService";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -14,6 +16,7 @@ class UserForm extends Component {
       contactInfo: this.props.profileData.contactInfo,
     };
     this.artistService = new ArtistService();
+    this.filesService = new FilesService();
   }
 
   handleInputChange = (e) => {
@@ -28,6 +31,23 @@ class UserForm extends Component {
     this.artistService
       .editArtist(id, this.state)
       .then(() => this.props.handleArtistSubmit())
+      .catch((err) => console.log(err));
+  };
+
+  // CLOUDINARYCONFIG
+  handleFileUpload = (e) => {
+    const uploadData = new FormData();
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    this.filesService
+      .handleUpload(uploadData)
+      .then((response) => {
+        console.log(
+          "Subida de archivo finalizada! La URL de Cloudinray es: ",
+          response.data.secure_url
+        );
+        this.setState({ imageUrl: response.data.secure_url });
+      })
       .catch((err) => console.log(err));
   };
 
@@ -92,6 +112,21 @@ class UserForm extends Component {
               className="text-muted"
             />
           </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Image (file)</Form.Label>
+            <Form.Control
+              name="imageUrl"
+              type="file"
+              onChange={this.handleFileUpload}
+            />
+          </Form.Group>
+
+          <Button variant="dark" type="submit">
+            Upload File
+          </Button>
+
+          <br></br>
 
           <Button variant="dark" type="submit">
             Submit Changes
