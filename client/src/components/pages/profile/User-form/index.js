@@ -43,7 +43,7 @@ class UserForm extends Component {
       .handleUpload(uploadData)
       .then((response) => {
         console.log(
-          "Subida de archivo finalizada! La URL de Cloudinray es: ",
+          "File uploaded! The Cloudinary URL is: ",
           response.data.secure_url
         );
         this.setState({ imageUrl: response.data.secure_url });
@@ -127,6 +127,19 @@ class UserForm extends Component {
           </Button>
 
           <br></br>
+
+          <Form.Group>
+            <Form.Label>Audio (file)</Form.Label>
+            <Form.Control
+              name="audioFile"
+              type="file"
+              onChange={this.handleFileUpload}
+            />
+          </Form.Group>
+
+          <Button variant="dark" type="submit">
+            Upload File
+          </Button>
 
           <Button variant="dark" type="submit">
             Submit Changes

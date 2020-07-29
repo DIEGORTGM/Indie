@@ -18,14 +18,14 @@ router.get("/getOneArtist/:id", (req, res, next) => {
 });
 
 router.put("/edit/:id", (req, res, next) => {
-  // console.log(id, req.body)
-  const { username, occupation, description, contactInfo } = req.body;
+  const { username, occupation, description, contactInfo, imageUrl } = req.body;
 
   Artist.findByIdAndUpdate(req.params.id, {
     username,
     occupation,
     description,
     contactInfo,
+    imageUrl
   })
     .then((editArtist) => res.json(editArtist))
     .catch((err) => next(new Error(err)));

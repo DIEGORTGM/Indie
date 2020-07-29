@@ -20,8 +20,7 @@ const UserSchema = new Schema(
     },
     description: {
       type: String,
-      default:
-      "..."
+      default: "...",
     },
     imageUrl: {
       type: String,
@@ -50,6 +49,9 @@ const UserSchema = new Schema(
       type: String,
     },
     carPicture: {
+      type: [String],
+    },
+    audioFile: {
       type: [String],
     },
   },
