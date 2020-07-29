@@ -12,8 +12,12 @@ import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Carousel from "react-bootstrap/Carousel"
 
 import CommentService from "../../../service/CommentService";
+
+import ReactPlayer from "react-player";
+import AudioPlayer from "react-h5-audio-player";
 
 class ArtistDetails extends Component {
   constructor(props) {
@@ -75,6 +79,9 @@ class ArtistDetails extends Component {
 
         <Row>
           <Col md={{ span: 4, offset: 1 }}>
+            <Link className="btn btn-dark btn-md detailButton" to="/artists">
+              Go Back
+            </Link>
             <p>
               <b></b> {this.state.artistDetails.username}
             </p>
@@ -84,9 +91,6 @@ class ArtistDetails extends Component {
               className="rounded"
               alt="profile"
             />
-            <Link className="btn btn-dark btn-md detailButton" to="/artists">
-              Go Back
-            </Link>
           </Col>
           <Col md={{ span: 5, offset: 1 }}>
             <p>
@@ -120,6 +124,48 @@ class ArtistDetails extends Component {
               </Button>
             </Form>
           </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Container>
+              <div className="video">
+                <h3 className="feat">Featured Video.</h3>
+                <ReactPlayer url={this.state.artistDetails.video} />
+                {this.state.artistDetails.videoName}
+              </div>
+            </Container>
+          </Col>
+          <Col>
+            <div className="audio">
+              <AudioPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <h3 className="gallery">Gallery.</h3>
+          <Carousel className="carousel">
+            <Carousel.Item>
+              <img
+                className="d-block w-100 imageCar"
+                src={this.state.artistDetails.carPicture[0]}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={this.state.artistDetails.carPicture[1]}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={this.state.artistDetails.carPicture[2]}
+                alt="Third slide"
+              />
+            </Carousel.Item>
+          </Carousel>
         </Row>
       </Container>
     );

@@ -21,7 +21,7 @@ const UserSchema = new Schema(
     description: {
       type: String,
       default:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...",
+      "..."
     },
     imageUrl: {
       type: String,
@@ -43,6 +43,15 @@ const UserSchema = new Schema(
         ref: "Comment",
       },
     ],
+    video: {
+      type: String,
+    },
+    videoName: {
+      type: String,
+    },
+    carPicture: {
+      type: [String],
+    },
   },
   {
     timestamps: true,

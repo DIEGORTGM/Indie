@@ -22,6 +22,13 @@ const listUsers = [
     contactInfo: ["ericClapton@eric.com", "+34616188686"],
     pastWork: ["Unplugged", "Slowhand", "Riding With The King", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=fX5USg8_1gA",
+    videoName: "Layla",
+    carPicture: [
+      "https://vistapointe.net/images/eric-clapton-3.jpg",
+      "https://cdn.mos.cms.futurecdn.net/xjBcwauXz8WcHxvHGGXcPH.jpg",
+      "https://api.time.com/wp-content/uploads/2016/05/eric-clapton-justin-bieber-fan.jpg?quality=85&w=1024&h=512&crop=1",
+    ],
   },
   {
     name: "Mac Miller",
@@ -35,6 +42,13 @@ const listUsers = [
     contactInfo: ["macMiller@mac.com", "+34616188656"],
     pastWork: ["Blue Slide Park", "Swimming", "Circles", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=QrR_gm6RqCo",
+    videoName: "NPR Tiny Desk Concert",
+    carPicture: [
+      "https://i.ytimg.com/vi/aIHF7u9Wwiw/maxresdefault.jpg",
+      "https://www.queensjournal.ca/sites/default/files/styles/large/public/img/story/2018/09/10/mac_-_web.jpg?itok=dftnP_72",
+      "https://www.michigandaily.com/sites/default/files/styles/large/public/160922/macmiller.jpg?itok=yNPndWJq",
+    ],
   },
   {
     name: "Lana Del Rey",
@@ -53,6 +67,13 @@ const listUsers = [
       "...",
     ],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=TdrL3QxjyVw",
+    videoName: "Summertime Sadness",
+    carPicture: [
+      "https://www.abc.net.au/cm/rimage/9335302-16x9-large.jpg?v=2",
+      "https://cdn.vox-cdn.com/thumbor/xoevm4TzQ_yCNRedsyiSAOn8jEU=/0x0:5345x3563/1200x800/filters:focal(1732x431:2586x1285)/cdn.vox-cdn.com/uploads/chorus_image/image/65581779/1173237845.jpg.0.jpg",
+      "https://static.billboard.com/files/media/Lana-Del-Rey-bb20-2019-feat-billboard-tehifja-1548-1024x677.jpg",
+    ],
   },
   {
     name: "Joey Bada$$",
@@ -66,6 +87,13 @@ const listUsers = [
     contactInfo: ["joeyBada$$@joey.com", "+34616135465"],
     pastWork: ["The Light Pack", "All-Amerikkkan Bada$$", "1999", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=JMrf0FFmogI",
+    videoName: "Temptation on Like a Version",
+    carPicture: [
+      "https://wallpaperaccess.com/full/536336.jpg",
+      "https://townsquare.media/site/812/files/2017/06/Diddy-Joey-Badass-ashani.jpeg?w=980&q=75",
+      "https://dwgyu36up6iuz.cloudfront.net/heru80fdn/image/upload/c_fill,d_placeholder_vogue.png,fl_progressive,g_face,h_450,q_80,w_800/v1498080132/vogue_joey-badass-rap-style-brooklyn-video.jpg",
+    ],
   },
   {
     name: "Chance The Rapper",
@@ -79,6 +107,13 @@ const listUsers = [
     contactInfo: ["chanceRapper@chance.com", "+34616136547"],
     pastWork: ["The Big Day", "Coloring Book", "Acid Rap", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=-kWbZvVU-e0",
+    videoName: "NPR Tiny Desk Concert",
+    carPicture: [
+      "https://i2.wp.com/vocalo.org/wp-content/uploads/2019/07/gettyimages-1154640765_wide-177a7d5bb936e3dca27787c1162a05f0bcec075f.jpg?resize=1024%2C577&ssl=1",
+      "https://www.nme.com/wp-content/uploads/2019/07/Chance-the-Rapper.jpg",
+      "https://apeconcerts.com/wp-content/uploads/2019/07/ChanceTheRapper_19_1024.jpg",
+    ],
   },
   {
     name: "Macklemore",
@@ -92,6 +127,13 @@ const listUsers = [
     contactInfo: ["Macklemore@macklemore.com", "+34616162345"],
     pastWork: ["Gemini", "This Unruly Mess I've Made ", "The Heist", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=2zNSgSzhBfM",
+    videoName: "Can't Hold Us feat. Ray Dalton",
+    carPicture: [
+      "https://ratedej.files.wordpress.com/2017/09/6f80bb42-7687-4083-9956-d637f5653c44_480401_tablet_landscape_large_16_9.jpg?w=1568",
+      "https://static01.nyt.com/images/2013/02/20/arts/20MACKLEMORE/20MACKLEMORE-articleLarge.jpg",
+      "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F02%2Fmacklemore-ryan-lewis-did-not-submit-album-to-2017-grammys-001.jpg?q=75&w=800&cbr=1&fit=max",
+    ],
   },
   {
     name: "Ellie Goulding",
@@ -105,6 +147,13 @@ const listUsers = [
     contactInfo: ["ellieGoulding@ellie.com", "+34616254786"],
     pastWork: ["Brightest Blue", "Delirium", "Lights", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=AJtDXIazrMo",
+    videoName: "Love Me Like You Do",
+    carPicture: [
+      "https://api.ellecanada.com/app/uploads/2020/07/Ellie-Goulding.jpg",
+      "https://miro.medium.com/max/916/1*jSceeKU5wKLMRTAuKuklFA.jpeg",
+      "https://static.billboard.com/files/2020/07/Ellie-Goulding-press-photo-03-cr-Nathan-Jenkins-2020-billboard-1548-1595338128-1024x677.jpg",
+    ],
   },
   {
     name: "Kaytranada",
@@ -118,6 +167,13 @@ const listUsers = [
     contactInfo: ["Kaytranada@kaytranada.com", "+34623410035"],
     pastWork: ["Bubba", "99.9%", "Kaytra Todo", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=-5EQIiabJvk",
+    videoName: "Boiler Room Montreal DJ Set",
+    carPicture: [
+      "https://www.mor.bo/wp-content/uploads/2019/01/ktthumb.jpg",
+      "https://i1.wp.com/thissongissick.com/wp-content/uploads/2020/02/kaytra-10.jpg?fit=1103%2C620&ssl=1",
+      "https://www.abc.net.au/cm/rimage/10123818-16x9-large.jpg?v=2",
+    ],
   },
   {
     name: "Nicolas Jaar",
@@ -131,6 +187,13 @@ const listUsers = [
     contactInfo: ["NicolasJaar@nicolasjaar.com", "+34621536735"],
     pastWork: ["Cenizas", "Space is Only Noise", "Sirens", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=IUjWumGIqe8",
+    videoName: "Boiler Room NYC DJ Set at Clown & Sunset Takeover",
+    carPicture: [
+      "https://www.magneticmag.com/.image/t_share/MTMzNTU3Njc3NDI1OTg4ODgy/nicolas-jaar-press-photojpg.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ce/Nicolas_Jaar_live_at_Rex_Club_Paris.jpg",
+      "https://www.residentadvisor.net/images/features/2020/feature-nicolas-jaar-header-0.jpg",
+    ],
   },
   {
     name: "Thundercat",
@@ -144,6 +207,13 @@ const listUsers = [
     contactInfo: ["Thundercat@thundercat.com", "+34623415070"],
     pastWork: ["It is What it is", "Drank", "Apocalypse", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=GNCd_ERZvZM",
+    videoName: "Them Changes",
+    carPicture: [
+      "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F02%2Fthundercat-kendrick-lamar-walk-on-by-001.jpg?quality=95&w=1170&cbr=1&q=90&fit=max",
+      "https://a.scpr.org/i/54da0d5cf146d8c84194b26a7a4abbb4/110065-full.jpg",
+      "https://static01.nyt.com/images/2012/02/04/arts/THUNDER/THUNDER-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+    ],
   },
   {
     name: "Kamasi Washington",
@@ -157,6 +227,13 @@ const listUsers = [
     contactInfo: ["KamasiWashington@kamasiwashington.com", "+34623143252"],
     pastWork: ["Heaven and Earth", "The Choice", "The Epic", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=LdyabrdFMC8",
+    videoName: "Street Fighter Mas",
+    carPicture: [
+      "https://i.ytimg.com/vi/NtQRBzSN9Vw/maxresdefault.jpg",
+      "https://happymag.tv/wp-content/uploads/2020/02/kamas-large.jpg",
+      "https://bizarro.fm/wp-content/uploads/2019/12/Kamasi-Washington-1021x580.jpg",
+    ],
   },
   {
     name: "Unkown Mortal Orchestra",
@@ -170,6 +247,13 @@ const listUsers = [
     contactInfo: ["UnkownMortalOrchestra@UMO.com", "+34623454678"],
     pastWork: ["IC-01 Hanoi", "Sex & Food", "Unknown Mortal Orchestra", "..."],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=IJrKlSkxRHA",
+    videoName: "Hunnybee",
+    carPicture: [
+      "https://media.npr.org/assets/img/2014/01/23/umo_wide-c68c5e5b9859a32218dbcb419d8b0fe01e93e83d.jpg?s=1400",
+      "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/05/25/15/musteaser-unknownmortalorchestra-2509.jpg?w968h681",
+      "https://upload.wikimedia.org/wikipedia/commons/4/48/Unknown_Mortal_Orchestra_%282015%29.jpg",
+    ],
   },
   {
     name: "Parcels",
@@ -181,8 +265,20 @@ const listUsers = [
     imageUrl:
       "https://images.squarespace-cdn.com/content/5456b497e4b0750e1090c8d9/1510770065639-DVVHYNLBJ3UMC8720ZDZ/parcels.jpg?content-type=image%2Fjpeg",
     contactInfo: ["Parcels@Parcels.com", "+34623454888"],
-    pastWork: ["Live Vol. 1", "Parcels", "Kitsuné Maison Compilation 18: The Hysterical Advisory Issue", "..."],
+    pastWork: [
+      "Live Vol. 1",
+      "Parcels",
+      "Kitsuné Maison Compilation 18: The Hysterical Advisory Issue",
+      "...",
+    ],
     favorites: [""],
+    video: "https://www.youtube.com/watch?v=e4TFD2PfVPw&t=910s",
+    videoName: "Live Vol. 1",
+    carPicture: [
+      "https://www.nme.com/wp-content/uploads/2018/12/37.jpg",
+      "https://happymag.tv/wp-content/uploads/2019/01/parcelsfeature.jpg",
+      "https://amnplify.com.au/wp-content/uploads/2020/04/PARC.jpg",
+    ],
   },
 ];
 

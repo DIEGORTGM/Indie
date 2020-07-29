@@ -13,7 +13,7 @@ cloudinary.config({
 const storage = cloudinaryStorage({
   cloudinary,
   folder: "coasters",
-  allowedFormats: ["jpg", "png"],
+  allowedFormats: ["jpg", "png", "mp3"],
   filename: function (req, res, cb) {
     cb(null, res.originalname);
   },
