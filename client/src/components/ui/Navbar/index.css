@@ -1,0 +1,13 @@
+.navbar {
+background-image: linear-gradient(to right top, #4ca1af, #6db1bc, #8bc0ca, #a8d0d7, #c4e0e5);
+height: 80px
+}
+
+.indie {
+color: white
+}
+
+.logo {
+    width: 50px;
+    height: 30px;
+}

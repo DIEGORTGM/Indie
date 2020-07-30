@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import AuthService from "../../../service/AuthService";
 
+import './index.css'
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -68,7 +70,7 @@ class LoginForm extends Component {
                 </Form.Text>
               </Form.Group>
 
-              <Button variant="dark" type="submit">
+              <Button variant="light" type="submit" className="logButton">
                 Log In
               </Button>
             </Form>

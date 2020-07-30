@@ -74,12 +74,12 @@ class ArtistDetails extends Component {
     return !this.state.artistDetails ? (
       <h3>Loading...</h3>
     ) : (
-      <Container as="main">
+      <Container as="main" className="mainContainer">
         <h1>{this.state.artistDetails.title}</h1>
 
         <Row>
           <Col md={{ span: 4, offset: 1 }}>
-            <Link className="btn btn-dark btn-md detailButton" to="/artists">
+            <Link className="btn btn-light btn-md detailButton" to="/artists">
               Go Back
             </Link>
             <p>
@@ -88,9 +88,9 @@ class ArtistDetails extends Component {
             <br></br>
             <img
               src={this.state.artistDetails.imageUrl}
-              className="rounded"
+              className="rounded detailsPic"
               alt="profile"
-            />
+              />
           </Col>
           <Col md={{ span: 5, offset: 1 }}>
             <p>
@@ -104,25 +104,10 @@ class ArtistDetails extends Component {
               <br></br>
               {this.state.artistDetails.description}
             </p>
-            <hr></hr>
-            {this.state.comments &&
-              this.state.comments.map((comment, idx) => (
-                <CommentCard key={idx} {...comment} />
-              ))}
-            <Form onSubmit={this.handleFormSubmit}>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Comments:</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows="3"
-                  onChange={this.handleInputChange}
-                  name="text"
-                />
-              </Form.Group>
-              <Button variant="dark" type="submit" className="commentButton">
-                Comment
-              </Button>
-            </Form>
+              <hr></hr>
+              <div className="audio">
+                <AudioPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+              </div>
           </Col>
         </Row>
         <Row>
@@ -135,12 +120,7 @@ class ArtistDetails extends Component {
               </div>
             </Container>
           </Col>
-          <Col>
-            <div className="audio">
-              <AudioPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
-            </div>
-          </Col>
-        </Row>
+          </Row>
         <Row>
           <h3 className="gallery">Gallery.</h3>
           <Carousel className="carousel">
@@ -153,20 +133,42 @@ class ArtistDetails extends Component {
             </Carousel.Item>
             <Carousel.Item>
               <img
-                className="d-block w-100"
+                  className="d-block w-100 imageCar"
                 src={this.state.artistDetails.carPicture[1]}
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
-                className="d-block w-100"
+                  className="d-block w-100 imageCar"
                 src={this.state.artistDetails.carPicture[2]}
                 alt="Third slide"
               />
             </Carousel.Item>
           </Carousel>
-        </Row>
+          </Row>
+          <Row>
+            <Col>
+              {this.state.comments &&
+            this.state.comments.map((comment, idx) => (
+              <CommentCard key={idx} {...comment} />
+            ))}
+            <Form onSubmit={this.handleFormSubmit}>
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Comments:</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows="3"
+                  onChange={this.handleInputChange}
+                  name="text"
+                />
+              </Form.Group>
+              <Button variant="light" type="submit" className="commentButton">
+                Comment
+              </Button>
+              </Form>
+            </Col>
+          </Row>
       </Container>
     );
   }

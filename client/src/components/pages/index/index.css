@@ -1,3 +1,7 @@
+ /* {
+     background-image: url('https://cdn.inspirationhut.net/wp-content/uploads/2013/05/61.png');
+} */
+
 .header {
     margin-left: 200px;
     margin-top: 120px;
@@ -23,4 +27,13 @@
     padding-bottom: 30px;
     display: flex;
     justify-content: center;
+}
+
+.logo {
+    width: 50px;
+    height: 45px;
+}
+
+.logoHeader {
+    display: flex;
 }

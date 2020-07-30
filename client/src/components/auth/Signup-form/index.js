@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import AuthService from "../../../service/AuthService";
 
+import './index.css'
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -96,11 +98,11 @@ class SignupForm extends Component {
                   <option>Singer/Songwriter</option>
                   <option>Producer</option>
                   <option>DJ</option>
-                  <option>Instrumentalist (guitar, bass, drums, etc.)</option>
+                  <option>Instrumentalist</option>
                 </Form.Control>
               </Form.Group>
               
-              <Button variant="dark" type="submit">
+              <Button variant="light" type="submit" className="regButton">
                 Register
               </Button>
             </Form>

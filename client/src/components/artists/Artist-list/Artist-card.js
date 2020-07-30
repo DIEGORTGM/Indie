@@ -17,7 +17,7 @@ const ArtistCard = ({ imageUrl, username, occupation, _id }) => {
           <Card.Text>{occupation}</Card.Text>
           <Link
             to={`/getOneArtist/${_id}`}
-            className="btn btn-dark btn-block btn-sm"
+            className="btn btn-light btn-block btn-sm buttonCard"
           >
             See Details.
           </Link>

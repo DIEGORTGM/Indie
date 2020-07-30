@@ -6,7 +6,8 @@
 .linkBack {
   position: fixed;
   bottom: 200px;
-  left: 60px;
+  left: 60px;     
+  background-color: #C4E0E5;
 }
 
 .imageProfile {
@@ -22,4 +23,11 @@
   margin-top: 50px;
 }
 
+.editButton {
+  background-color: #C4E0E5;
+}
+
+.upload {
+   background-color: #C4E0E5;
+}
 

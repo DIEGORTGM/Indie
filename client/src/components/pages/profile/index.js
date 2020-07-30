@@ -64,14 +64,28 @@ class Profile extends Component {
               </p>
               <hr></hr>
               <p>
-                <h5>Favorites: </h5>{" "}
+                <h5>Audio: </h5>{" "}
               </p>
+              <Form.Group>
+                <Form.Label>Audio (file)</Form.Label>
+                <Form.Control
+                  name="audioFile"
+                  type="file"
+                  onChange={this.handleFileUpload}
+                />
+              </Form.Group>
+
+              <Button variant="light" type="submit" className="upload">
+                Upload File
+          </Button>
+              
               <hr></hr>
               <Button
                 onClick={() => this.handleModal(true)}
-                variant="dark"
+                variant="light"
                 size="sm"
                 style={{ marginBottom: "20px" }}
+                className="editButton"
               >
                 Edit
               </Button>
@@ -80,7 +94,7 @@ class Profile extends Component {
                 <Form.Label>Comments:</Form.Label>
                 <Form.Control as="textarea" rows="3" />
               </Form.Group>
-              <Link className="btn btn-dark btn-md linkBack" to="/artists">
+              <Link className="btn btn-light btn-md linkBack" to="/artists">
                 Go Back
               </Link>
             </Col>

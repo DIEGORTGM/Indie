@@ -1,25 +1,45 @@
+.mainContainer {
+     /* background-image: url('https://cdn.inspirationhut.net/wp-content/uploads/2013/05/61.png'); */
+     padding-top: 40px;
+} 
+
 .detailButton {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
+  background-color: #C4E0E5;
 }
 
 .video {
-    padding-top: 70px;
-    margin-bottom: 200px;
+  padding-top: 70px;
+  margin-bottom: 200px;
+  margin-left: 225px;
 }
 
 .feat {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .gallery {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .carousel {
-    padding-bottom: 80px;
-    object-fit: cover;
+  padding-bottom: 80px;
+}
+
+.imageCar {
+object-fit: contain;
 }
 
 .audio {
   width: 500px;
+  margin-left: 180px;
+}
+
+.commentButton {
+  background-color: #C4E0E5;
+  margin-bottom: 80px;
+}
+
+.detailsPic {
+  margin-bottom: 50px;
 }

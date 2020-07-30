@@ -60,11 +60,7 @@ class ArtistList extends Component {
       })
       .catch((err) => console.log(err.response.data.message)); // Error handling yay!
   };
-
-  // dynamicSearch = () => {
-  //   return this.state.artists.filter(artists => artists.includes(this.state.searchTerm.toLowerCase()))
-  // }
-
+  
   render() {
     console.log(this.state);
     return (
@@ -84,7 +80,7 @@ class ArtistList extends Component {
               placeholder="Search Artists..."
               className="mr-sm-2 search"
             />
-            <Button variant="dark" type="submit" className="searchButton">
+            <Button variant="light" type="submit" className="searchButton">
               Search
             </Button>
             </Form>

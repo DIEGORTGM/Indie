@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import ArtistService from "../../../../service/ArtistService";
 import FilesService from "../../../../service/FilesService";
 
+import './index.css'
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -14,6 +16,7 @@ class UserForm extends Component {
       occupation: this.props.profileData.occupation,
       description: this.props.profileData.description,
       contactInfo: this.props.profileData.contactInfo,
+      audioFile: this.props.profileData.audioFile
     };
     this.artistService = new ArtistService();
     this.filesService = new FilesService();
@@ -38,6 +41,7 @@ class UserForm extends Component {
   handleFileUpload = (e) => {
     const uploadData = new FormData();
     uploadData.append("imageUrl", e.target.files[0]);
+    uploadData.append("audioFile", e.target.files[0])
 
     this.filesService
       .handleUpload(uploadData)
@@ -122,26 +126,12 @@ class UserForm extends Component {
             />
           </Form.Group>
 
-          <Button variant="dark" type="submit">
+          <Button variant="light" type="submit" classname="formButton">
             Upload File
           </Button>
-
           <br></br>
-
-          <Form.Group>
-            <Form.Label>Audio (file)</Form.Label>
-            <Form.Control
-              name="audioFile"
-              type="file"
-              onChange={this.handleFileUpload}
-            />
-          </Form.Group>
-
-          <Button variant="dark" type="submit">
-            Upload File
-          </Button>
-
-          <Button variant="dark" type="submit">
+          <br></br>
+          <Button variant="light" type="submit" classname="formButton">
             Submit Changes
           </Button>
         </Form>

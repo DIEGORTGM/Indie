@@ -1,18 +1,18 @@
 import React from 'react'
 
-// import ArtistCard from "../../artists/Artist-list/Artist-card";
-
 import "./index.css";
 
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
 
 const Index = () => {
 
     return (
       <section className="header">
-        <h1>Indie.</h1>
+        <div className="logoHeader">
+        <img src='https://images.squarespace-cdn.com/content/v1/58dace4846c3c499690aded0/1490737428992-XSVQIKLFHPJB4W8K3T2S/ke17ZwdGBToddI8pDm48kL3VKmwKI3leYB51VJjLFB8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcQ643Xlia2-fGNGmT0Ni4GzSBWYegu4Na6KP29i9RHf4IJOBaNFWew0RIOS0ELFXu/vinyl-record-1-1024-768-descibel-radio-1TJlqv-clipart.png?format=1500w' alt="logo" className="logo"></img>
+          <h1>Indie.</h1>
+        </div>
         <p>The best website for information on independent artists.</p>
             <br></br>
             <br>
@@ -28,12 +28,6 @@ const Index = () => {
               <Card.Body>
                 <Card.Title>Mac Miller</Card.Title>
                 <Card.Text>Singer/Songwriter</Card.Text>
-                <Link
-                  to={`/getOneArtist/{5f195b257d343108d6ed503e}`}
-                  className="btn btn-dark btn-block btn-sm"
-                >
-                  See Details.
-                </Link>
               </Card.Body>
             </Card>
           </div>
