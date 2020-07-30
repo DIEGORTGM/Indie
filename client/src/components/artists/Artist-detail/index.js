@@ -106,7 +106,7 @@ class ArtistDetails extends Component {
             </p>
               <hr></hr>
               <div className="audio">
-                <AudioPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+                <AudioPlayer src={this.state.artistDetails.audioFile} />
               </div>
           </Col>
         </Row>

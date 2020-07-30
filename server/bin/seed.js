@@ -29,6 +29,7 @@ const listUsers = [
       "https://cdn.mos.cms.futurecdn.net/xjBcwauXz8WcHxvHGGXcPH.jpg",
       "https://api.time.com/wp-content/uploads/2016/05/eric-clapton-justin-bieber-fan.jpg?quality=85&w=1024&h=512&crop=1",
     ],
+    audioFile: "../../client/public/Chance The Rapper - Cocoa Butter Kisses.mp3"
   },
   {
     name: "Mac Miller",
@@ -49,6 +50,7 @@ const listUsers = [
       "https://www.queensjournal.ca/sites/default/files/styles/large/public/img/story/2018/09/10/mac_-_web.jpg?itok=dftnP_72",
       "https://www.michigandaily.com/sites/default/files/styles/large/public/160922/macmiller.jpg?itok=yNPndWJq",
     ],
+    audioFile: "https://drive.google.com/file/d/1pAq6NpY42DC5YTkLjLntRDRD7upY6Xws/view?usp=sharing"
   },
   {
     name: "Lana Del Rey",
@@ -74,6 +76,7 @@ const listUsers = [
       "https://cdn.vox-cdn.com/thumbor/xoevm4TzQ_yCNRedsyiSAOn8jEU=/0x0:5345x3563/1200x800/filters:focal(1732x431:2586x1285)/cdn.vox-cdn.com/uploads/chorus_image/image/65581779/1173237845.jpg.0.jpg",
       "https://static.billboard.com/files/media/Lana-Del-Rey-bb20-2019-feat-billboard-tehifja-1548-1024x677.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Joey Bada$$",
@@ -94,6 +97,7 @@ const listUsers = [
       "https://townsquare.media/site/812/files/2017/06/Diddy-Joey-Badass-ashani.jpeg?w=980&q=75",
       "https://dwgyu36up6iuz.cloudfront.net/heru80fdn/image/upload/c_fill,d_placeholder_vogue.png,fl_progressive,g_face,h_450,q_80,w_800/v1498080132/vogue_joey-badass-rap-style-brooklyn-video.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Chance The Rapper",
@@ -114,6 +118,7 @@ const listUsers = [
       "https://www.nme.com/wp-content/uploads/2019/07/Chance-the-Rapper.jpg",
       "https://apeconcerts.com/wp-content/uploads/2019/07/ChanceTheRapper_19_1024.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Macklemore",
@@ -134,6 +139,7 @@ const listUsers = [
       "https://static01.nyt.com/images/2013/02/20/arts/20MACKLEMORE/20MACKLEMORE-articleLarge.jpg",
       "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2018%2F02%2Fmacklemore-ryan-lewis-did-not-submit-album-to-2017-grammys-001.jpg?q=75&w=800&cbr=1&fit=max",
     ],
+    audioFile: ""
   },
   {
     name: "Ellie Goulding",
@@ -154,6 +160,7 @@ const listUsers = [
       "https://miro.medium.com/max/916/1*jSceeKU5wKLMRTAuKuklFA.jpeg",
       "https://static.billboard.com/files/2020/07/Ellie-Goulding-press-photo-03-cr-Nathan-Jenkins-2020-billboard-1548-1595338128-1024x677.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Kaytranada",
@@ -174,6 +181,7 @@ const listUsers = [
       "https://i1.wp.com/thissongissick.com/wp-content/uploads/2020/02/kaytra-10.jpg?fit=1103%2C620&ssl=1",
       "https://www.abc.net.au/cm/rimage/10123818-16x9-large.jpg?v=2",
     ],
+    audioFile: ""
   },
   {
     name: "Nicolas Jaar",
@@ -194,6 +202,7 @@ const listUsers = [
       "https://upload.wikimedia.org/wikipedia/commons/c/ce/Nicolas_Jaar_live_at_Rex_Club_Paris.jpg",
       "https://www.residentadvisor.net/images/features/2020/feature-nicolas-jaar-header-0.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Thundercat",
@@ -214,6 +223,7 @@ const listUsers = [
       "https://a.scpr.org/i/54da0d5cf146d8c84194b26a7a4abbb4/110065-full.jpg",
       "https://static01.nyt.com/images/2012/02/04/arts/THUNDER/THUNDER-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
     ],
+    audioFile: ""
   },
   {
     name: "Kamasi Washington",
@@ -234,6 +244,7 @@ const listUsers = [
       "https://happymag.tv/wp-content/uploads/2020/02/kamas-large.jpg",
       "https://bizarro.fm/wp-content/uploads/2019/12/Kamasi-Washington-1021x580.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Unkown Mortal Orchestra",
@@ -254,6 +265,7 @@ const listUsers = [
       "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/05/25/15/musteaser-unknownmortalorchestra-2509.jpg?w968h681",
       "https://upload.wikimedia.org/wikipedia/commons/4/48/Unknown_Mortal_Orchestra_%282015%29.jpg",
     ],
+    audioFile: ""
   },
   {
     name: "Parcels",
@@ -279,6 +291,7 @@ const listUsers = [
       "https://happymag.tv/wp-content/uploads/2019/01/parcelsfeature.jpg",
       "https://amnplify.com.au/wp-content/uploads/2020/04/PARC.jpg",
     ],
+    audioFile: ""
   },
 ];
 
